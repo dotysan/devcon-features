@@ -6,4 +6,4 @@ UV_INSTALLER="https://gist.github.com/dotysan/fdbfc77b924a08ceab7197d010280dac/r
 
 hash curl
 # export DEBUG=yep
-curl --silent --show-error --location "$UV_INSTALLER" |bash
+curl --silent --show-error --fail --location "$UV_INSTALLER" |bash
