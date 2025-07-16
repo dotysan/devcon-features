@@ -1,0 +1,14 @@
+{
+    "default": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "uv": {}
+        }
+    },
+    "python3_10": {
+        "image": "mcr.microsoft.com/devcontainers/python:3.10",
+        "features": {
+            "uv": {}
+        }
+    }
+}
