@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install \
     util-linux-extra \
     zstd \
     --yes --no-install-recommends \
-    && apt-get upgrade --yes
+    && apt-get upgrade --yes \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # note .devcontainer/devcontainer.json:features{} run after this Dockerfile is done...
