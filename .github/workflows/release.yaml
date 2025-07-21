@@ -32,7 +32,7 @@ jobs:
       - name: "Publish Devcontainer Image"
         uses: devcontainers/ci@v0.3
         with:
-          base-path-to-devcontainer: ./fireview
+          subFolder: ./fireview
           imageName: ghcr.io/dotysan/devcontainers/fireview
           cacheFrom: ghcr.io/dotysan/devcontainers/fireview
           push: always
