@@ -19,11 +19,23 @@ jobs:
           publish-features: "true"
           base-path-to-features: "./src"
           generate-docs: "true"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          publish-image: "true"
-          base-path-to-devcontainer: "./fireview"
-          image-name: "ghcr.io/dotysan/devcontainers/fireview"
+      - name: "Authenticate with GHCR"
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: "Publish Devcontainer Image"
+        uses: devcontainers/ci@0.3
+        with:
+          base-path-to-devcontainer: ./fireview
+          imageName: ghcr.io/dotysan/devcontainers/fireview
+          cacheFrom: ghcr.io/dotysan/devcontainers/fireview
+          push: always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
