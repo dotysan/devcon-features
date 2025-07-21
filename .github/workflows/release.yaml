@@ -13,13 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Publish Features"
+      - name: "Publish Features & Containers"
         uses: devcontainers/action@v1
         with:
           publish-features: "true"
           base-path-to-features: "./src"
           generate-docs: "true"
-          
+
+          publish-image: "true"
+          base-path-to-devcontainer: "./fireview"
+          image-name: "ghcr.io/dotysan/devcontainers/fireview"
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
