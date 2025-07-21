@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Publish Features"
+      - name: "Publish Features & Containers"
         uses: devcontainers/action@v1
         with:
           publish-features: "true"
